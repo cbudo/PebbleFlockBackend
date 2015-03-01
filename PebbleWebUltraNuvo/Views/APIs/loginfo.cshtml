@@ -1,0 +1,68 @@
+﻿@{
+    ViewBag.Title = "LogInfo";
+}
+    <p>Name</p>
+    @Html.TextBox("Name")
+    <br />
+    <p>Google Username</p>
+    @Html.TextBox("Username")
+    <br />
+    <p>Google Password</p>
+    @Html.TextBox("Password")
+    <br />
+    <br />
+    <input id="button" onclick="func()" class="btn btn-default" type="submit" value="Submit" />
+<script>
+    function func() {
+        var name = document.getElementById('Name').val;
+        var username = document.getElementById('Username').val;
+        var password = document.getElementById('Password').val;
+        Settings.option('name', name);
+        Settings.option('username', username);
+        Settings.option('password', password);
+        //localStorage.setItem("Name", name);
+        //localStorage.setItem("Username", username);
+        //localStorage.setItem("Password", password);
+        initFunc();
+        var options = { 'name':name,'username': username, 'password': password, 'contacts':localStorage.getItem("Contacts") };
+        document.location = 'pebblejs://close#' + encodeURIComponent(JSON.stringify(options));
+    }
+</script>
+<script type="text/javascript" src="http://www.google.com/jsapi">
+    
+    google.load("gdata", "1.x");
+    google.setOnLoadCallback(initFunc);
+    var contactsService;
+
+
+    function setupContactsService() {
+        contactsService = new google.gdata.contacts.ContactsService('exampleCo-exampleApp-1.0');
+    }
+
+    function logMeIn() {
+        var scope = 'https://www.google.com/m8/feeds';
+        var token = google.accounts.user.login(scope);
+    }
+
+    function initFunc() {
+        setupContactsService();
+        logMeIn();
+        getMyContacts();
+    }
+    function getMyContacts() {
+        var contactsFeedUri = 'https://www.google.com/m8/feeds/contacts/'+localStorage.getItem("Username")+'/full';
+        var query = new google.gdata.contacts.ContactQuery(contactsFeedUri);
+  
+  
+        contactsService.getContactFeed(query, handleContactsFeed, handleError);
+    }
+
+    var handleContactsFeed = function(result) {
+        var entries = result.feed.entry;
+        localStorage.setItem("Contacts", entries);
+    }
+    function handleError(e) {
+        alert("There was an error!");
+        alert(e.cause ? e.cause.statusText : e.message);
+    }
+</script>

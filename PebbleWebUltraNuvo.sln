@@ -1,0 +1,45 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.31101.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PebbleWebUltraNuvo", "PebbleWebUltraNuvo\PebbleWebUltraNuvo.csproj", "{A0CF50B5-EEFC-42D2-B34A-2F85B30686D6}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "PublishScripts", "PublishScripts", "{F9217C4A-104C-46FF-BD0B-39CAD14CD53B}"
+	ProjectSection(SolutionItems) = preProject
+		PublishScripts\AzureWebsitePublishModule.psm1 = PublishScripts\AzureWebsitePublishModule.psm1
+		PublishScripts\Publish-WebApplicationWebsite.ps1 = PublishScripts\Publish-WebApplicationWebsite.ps1
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Configurations", "Configurations", "{4DEF8575-A1C0-4051-8D64-00426749A2C9}"
+	ProjectSection(SolutionItems) = preProject
+		PublishScripts\Configurations\PebbleWebUltraNuvo-WAWS-dev.json = PublishScripts\Configurations\PebbleWebUltraNuvo-WAWS-dev.json
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 2
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = https://cbudo.visualstudio.com/defaultcollection
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = PebbleWebUltraNuvo\\PebbleWebUltraNuvo.csproj
+		SccProjectName1 = PebbleWebUltraNuvo
+		SccLocalPath1 = PebbleWebUltraNuvo
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A0CF50B5-EEFC-42D2-B34A-2F85B30686D6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A0CF50B5-EEFC-42D2-B34A-2F85B30686D6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A0CF50B5-EEFC-42D2-B34A-2F85B30686D6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A0CF50B5-EEFC-42D2-B34A-2F85B30686D6}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{4DEF8575-A1C0-4051-8D64-00426749A2C9} = {F9217C4A-104C-46FF-BD0B-39CAD14CD53B}
+	EndGlobalSection
+EndGlobal
